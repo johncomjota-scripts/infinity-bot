@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Infinity Bot - O bot multifuncional definitivo para o seu servidor do Discord com moderação, entretenimento, missões e recursos premium.">
     <title>Infinity Bot | O Bot Multifuncional para Discord</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <!-- Ícones do FontAwesome para deixar o site mais profissional -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,7 +14,9 @@
     <!-- Cabeçalho -->
     <header>
         <div class="logo">
-            <i class="fa-solid fa-infinity"></i> Infinity Bot
+            <!-- Substitua "logo.png" pelo nome real da sua imagem na pasta assets/img/ -->
+            <img src="assets/img/Logo.png" alt="Logo Infinity Bot" onerror="this.style.display='none'">
+            <span>Infinity Bot</span>
         </div>
         <nav>
             <a href="index.html" class="active">Início</a>
@@ -24,22 +26,30 @@
         </nav>
     </header>
 
-    <!-- Seção Principal (Hero) -->
+    <!-- Seção Principal (Hero com Banner e Texto Lado a Lado) -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Eleve o nível da sua comunidade com o <span>Infinity Bot</span></h1>
-            <p>
-                O bot multifuncional para Discord criado para transformar seu servidor com 
-                ferramentas avançadas de moderação, entretenimento imersivo, missões dinâmicas 
-                e sistemas personalizados exclusivos.
-            </p>
-            <div class="buttons">
-                <a class="button primary" href="https://discord.com/oauth2/authorize?client_id=1535672348454166568&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank">
-                    <i class="fa-brands fa-discord"></i> Adicionar ao Discord
-                </a>
-                <a class="button secondary" href="premium.html">
-                    <i class="fa-solid fa-star"></i> Conhecer o Premium
-                </a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Eleve o nível da sua comunidade com o <span>Infinity Bot</span></h1>
+                <p>
+                    O bot multifuncional para Discord criado para transformar seu servidor com 
+                    ferramentas avançadas de moderação, entretenimento imersivo, missões dinâmicas 
+                    e sistemas personalizados exclusivos.
+                </p>
+                <div class="buttons">
+                    <a class="button primary" href="https://discord.com/oauth2/authorize?client_id=1535672348454166568&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank">
+                        <i class="fa-brands fa-discord"></i> Adicionar ao Discord
+                    </a>
+                    <a class="button secondary" href="premium.html">
+                        <i class="fa-solid fa-star"></i> Conhecer o Premium
+                    </a>
+                </div>
+            </div>
+
+            <!-- Banner do Bot -->
+            <div class="hero-banner">
+                <!-- Substitua "banner.png" pelo nome real da sua imagem na pasta assets/img/ -->
+                <img src="assets/img/banner.png" alt="Banner do Infinity Bot" onerror="this.style.display='none'">
             </div>
         </div>
     </section>
@@ -84,11 +94,16 @@
         </div>
     </section>
 
+    <!-- Botão Flutuante do Discord -->
+<a href="https://discord.gg/G5fsKANruV" class="discord-float" target="_blank" title="Adicionar ao Discord">
+    <i class="fa-brands fa-discord"></i>
+</a>
+
     <!-- Rodapé -->
     <footer>
         <div class="footer-content">
             <p>© 2026 Infinity Bot. Todos os direitos reservados.</p>
-            <p class="edit-credit">Editado com 💙 por John</p>
+            <p class="edit-credit">Editado por John</p>
             <div class="footer-links">
                 <a href="terms.html">Termos de Serviço</a>
                 <a href="privacy.html">Política de Privacidade</a>
