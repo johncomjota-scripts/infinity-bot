@@ -9,13 +9,33 @@
     <!-- Ícones do FontAwesome para deixar o site mais profissional -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <style>
+        /* Fundo Matrix Azul Integrado */
+        body {
+            background-color: #000000;
+        }
+
+        #matrix-canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Mantém a chuva de números atrás de todo o conteúdo do site */
+            opacity: 0.6; /* Deixa o efeito suave para não atrapalhar a leitura */
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Canvas onde a chuva Matrix azul vai rodar -->
+    <canvas id="matrix-canvas"></canvas>
 
     <!-- Cabeçalho -->
     <header>
         <div class="logo">
-            <!-- Substitua "logo.png" pelo nome real da sua imagem na pasta assets/img/ -->
+            <!-- Substitua "Logo.png" pelo nome real da sua imagem na pasta assets/img/ -->
             <img src="assets/img/Logo.png" alt="Logo Infinity Bot" onerror="this.style.display='none'">
             <span>Infinity Bot</span>
         </div>
@@ -114,15 +134,58 @@
 
     <!-- Player de Música de Fundo Automático -->
     <audio id="background-music" loop>
-        <source src="assets/audio/infinitybot.mp3" type="audio/mpeg">
+        <source src="assets/audio/sua-musica.mp3" type="audio/mpeg">
         Seu navegador não suporta o elemento de áudio.
     </audio>
 
-    <!-- Script do Player de Música -->
+    <!-- Script do Efeito Matrix Azul e do Player de Música -->
     <script>
+        // --- SCRIPT DO EFEITO MATRIX AZUL ---
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const nums = "0123456789";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const rainDrops = [];
+        for(let x = 0; x < columns; x++) {
+            rainDrops[x] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00bfff'; // Azul Neon
+            ctx.font = fontSize + "px monospace";
+
+            for(let i = 0; i < rainDrops.length; i++) {
+                const text = nums.charAt(Math.floor(Math.random() * nums.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                
+                if(rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 33);
+
+
+        // --- SCRIPT DO PLAYER DE MÚSICA ---
         document.addEventListener("DOMContentLoaded", function() {
             var audio = document.getElementById("background-music");
-            audio.volume = 0.010; // Volume em 10%
+            audio.volume = 0.3; // Volume em 30%
             
             var playPromise = audio.play();
             if (playPromise !== undefined) {
