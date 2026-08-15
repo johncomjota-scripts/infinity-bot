@@ -1,0 +1,285 @@
+/* ==========================================
+   1. RESET E CONFIGURAÇÕES GLOBAIS
+   ================================---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b0b0f;
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   2. COMPONENTES COMPARTILHADOS (Header & Footer)
+   ================================---------- */
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #22222a;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #22222a;
+    color: #777;
+    margin-top: 70px;
+}
+
+footer a {
+    color: #999;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+.edit-credit {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* ==========================================
+   3. PÁGINA INICIAL (INDEX COM BANNER)
+   ================================---------- */
+.hero {
+    padding: 80px 8%;
+}
+
+.hero-container {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.hero-banner {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero span {
+    color: #7289da;
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: #5865f2;
+    color: white;
+}
+
+.secondary {
+    background: #1d1d25;
+    color: white;
+    border: 1px solid #2d2d3a;
+}
+
+/* ==========================================
+   4. SEÇÃO DE RECURSOS (CARDS)
+   ================================---------- */
+.section {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #999;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: #15151c;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #252530;
+    text-align: left;
+    transition: border-color 0.2s ease;
+}
+
+.card:hover {
+    border-color: #5865f2;
+}
+
+.card .icon-box {
+    font-size: 28px;
+    color: #7289da;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #999;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* ==========================================
+   5. PÁGINAS DE TEXTO (Termos e Privacidade)
+   ================================---------- */
+main {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
+
+main h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+main h2 {
+    margin-top: 35px;
+    margin-bottom: 12px;
+    color: #7289da;
+}
+
+main p, 
+main li {
+    color: #b8b8c0;
+    margin-bottom: 15px;
+}
+
+main ul {
+    margin-left: 25px;
+}
+
+.updated {
+    color: #777;
+    margin-bottom: 35px;
+    font-size: 14px;
+}
+
+/* ==========================================
+   6. BOTÃO FLUTUANTE DO DISCORD
+   ================================---------- */
+.discord-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #5865f2;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.discord-float:hover {
+    transform: scale(1.1);
+    background-color: #4752c4;
+    color: white;
+}
