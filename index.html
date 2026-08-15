@@ -38,7 +38,7 @@
                     e sistemas personalizados exclusivos.
                 </p>
                 <div class="buttons">
-                    <a class="button primary" href="https://discord.com/oauth2/authorize?client_id=1537275578850222240" target="_blank">
+                    <a class="button primary" href="https://discord.com/oauth2/authorize?client_id=1535672348454166568&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank">
                         <i class="fa-brands fa-discord"></i> Adicionar ao Discord
                     </a>
                     <a class="button secondary" href="premium.html">
@@ -96,9 +96,9 @@
     </section>
 
     <!-- Botão Flutuante do Discord -->
-<a href="https://discord.gg/G5fsKANruV" class="discord-float" target="_blank" title="Adicionar ao Discord">
-    <i class="fa-brands fa-discord"></i>
-</a>
+    <a href="https://discord.gg/G5fsKANruV" class="discord-float" target="_blank" title="Adicionar ao Discord">
+        <i class="fa-brands fa-discord"></i>
+    </a>
 
     <!-- Rodapé -->
     <footer>
@@ -111,6 +111,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Player de Música de Fundo Automático -->
+    <audio id="background-music" loop>
+        <source src="assets/audio/infinitybot.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Script do Player de Música -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("background-music");
+            audio.volume = 0.010; // Volume em 10%
+            
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    document.addEventListener("click", function() {
+                        audio.play();
+                    }, { once: true });
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
